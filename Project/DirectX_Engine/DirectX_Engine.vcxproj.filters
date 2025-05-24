@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="09. Executable">
+      <UniqueIdentifier>{d8c4fb69-7f41-4ee8-b65b-8012e5c694e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="08. Miscellaneous">
+      <UniqueIdentifier>{8b00b0ce-4e67-418b-8398-92641e66416c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="08. Miscellaneous\pch">
+      <UniqueIdentifier>{05d462c5-733e-48ea-9c41-8c09104e88ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="08. Miscellaneous\MyHeader">
+      <UniqueIdentifier>{8c2e6464-1921-4c2b-8887-063e51414503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Engine Component">
+      <UniqueIdentifier>{4e0e70dc-7b9b-4179-a09d-6099a007e323}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene">
+      <UniqueIdentifier>{919a6e5c-acc2-43df-94f1-c44dc5c54f48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene Component">
+      <UniqueIdentifier>{425bee7e-ffb4-4067-9133-4c127e2e6b93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Object">
+      <UniqueIdentifier>{8cab23f4-0ab9-48b2-a1aa-28bd34cac7ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Object Component">
+      <UniqueIdentifier>{c74afe82-96bb-4cb8-8006-229fd984d04c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Engine Component\InputManager">
+      <UniqueIdentifier>{aa607036-4317-4687-8ac4-d01973316b54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Engine Component\RenderSystem">
+      <UniqueIdentifier>{48588b96-7aed-4e61-9a59-5083096dc25c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Scene Component\ObjectManager">
+      <UniqueIdentifier>{c1184505-6df8-47eb-bf70-b02ae77445db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Object Component\Transform">
+      <UniqueIdentifier>{c2233e85-5241-4868-b797-4565cad64ea2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="08. Miscellaneous\Utility">
+      <UniqueIdentifier>{2d4c8a08-eebf-4b9b-bc02-0fae9f50ef72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Scene\TestScene">
+      <UniqueIdentifier>{0675ca25-db34-46fa-a486-f6e8c164fd22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00. Engine">
+      <UniqueIdentifier>{c8c06527-9169-4c6b-9696-f275fa7314e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Engine Component\SceneManager">
+      <UniqueIdentifier>{39b583fd-e4ab-4838-ab05-8963449d8ef8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Object\Player">
+      <UniqueIdentifier>{5e97a3c3-0087-4a52-8a7b-64eccc35b792}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="08. Miscellaneous\Math">
+      <UniqueIdentifier>{e6286397-ac8a-4971-899c-645beaf5b036}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine.h">
+      <Filter>00. Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>08. Miscellaneous\pch</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>08. Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>04. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectComponent.h">
+      <Filter>05. Object Component</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>01. Engine Component\InputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>02. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>03. Scene Component\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformComponent.h">
+      <Filter>05. Object Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>08. Miscellaneous\MyHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>08. Miscellaneous\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="TestScene.h">
+      <Filter>02. Scene\TestScene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>01. Engine Component\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>04. Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="math.h">
+      <Filter>08. Miscellaneous\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3.h">
+      <Filter>08. Miscellaneous\Math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine.cpp">
+      <Filter>00. Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>08. Miscellaneous\pch</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectX_Engine.cpp">
+      <Filter>09. Executable</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>04. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectComponent.cpp">
+      <Filter>05. Object Component</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>01. Engine Component\InputManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>02. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>03. Scene Component\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformComponent.cpp">
+      <Filter>05. Object Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="TestScene.cpp">
+      <Filter>02. Scene\TestScene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>01. Engine Component\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>04. Object\Player</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
