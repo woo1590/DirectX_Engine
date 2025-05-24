@@ -24,7 +24,7 @@
 //My Header
 #include "Define.h"
 #include "Utility.h"
-#include "math.h"
+#include "Math.h"
 
 //c, c++
 #include <chrono>
@@ -42,5 +42,19 @@
 
 #pragma comment (lib,"d3dx9.lib")
 #pragma comment(lib,"d3dx9d.lib")
+
+#ifdef _DEBUG
+
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+
+#ifndef DBG_NEW 
+#define DBG_NEW new ( _NORMAL_BLOCK , __FILE__ , __LINE__ ) 
+#define new DBG_NEW 
+
+#endif
+#endif
+
 
 #endif //PCH_H
