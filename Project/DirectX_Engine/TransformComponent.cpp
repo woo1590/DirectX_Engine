@@ -47,9 +47,6 @@ math::TransformMatrix TransformComponent::GetWorldMatrix() const
 	localMat = localMat;
 	localMat = localMat;
 	localMat = localMat;
-	localMat = localMat;
-	localMat = localMat;
-	localMat = localMat;
 
 	return localMat;
 }
