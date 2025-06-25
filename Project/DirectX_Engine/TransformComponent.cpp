@@ -43,6 +43,7 @@ math::TransformMatrix TransformComponent::GetWorldMatrix() const
 
 	if (Parent)
 		localMat = localMat * Parent->GetWorldMatrix();
+	localMat = localMat;
 
 	return localMat;
 }
