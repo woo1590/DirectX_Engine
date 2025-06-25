@@ -26,7 +26,7 @@ bool Engine::InitWindow(HINSTANCE hInst, int nCmdShow)
         return false;
     }
 
-    originalWindowSize = { 0, 0, 800, 600 };
+    originalWindowSize = { 0, 0, 1280, 720 };
     windowSize = originalWindowSize;
 
     AdjustWindowRect(&windowSize, WS_OVERLAPPEDWINDOW, FALSE);

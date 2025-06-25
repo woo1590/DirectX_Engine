@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "TransformComponent.h"
+#include "OrbitComponent.h"
 #include "Object.h"
 
 TransformComponent::TransformComponent(Object* owner)
@@ -12,7 +13,7 @@ void TransformComponent::SetParent(Object* parent)
 	Parent = parent->GetComponent<TransformComponent>();
 }
 
-void TransformComponent::SetRotate(D3DXVECTOR3 rotation)
+void TransformComponent::SetRotate(math::vec3 rotation)
 {
 	float rotX = math::NormalizeAngle(rotation.x);
 	float rotY = math::NormalizeAngle(rotation.y);
@@ -23,30 +24,47 @@ void TransformComponent::SetRotate(D3DXVECTOR3 rotation)
 
 void TransformComponent::SetRotate(float pitch, float yaw, float roll)
 {
-	SetRotate(D3DXVECTOR3(pitch, yaw, roll));
+	SetRotate(math::vec3(pitch, yaw, roll));
 }
 
-void TransformComponent::Translate(D3DXVECTOR3 trans)
+void TransformComponent::Translate(math::vec3 trans)
 {
 	Position += trans;
 }
 
 void TransformComponent::Translate(float x, float y, float z)
 {
-	Translate(D3DXVECTOR3(x, y, z));
+	Translate(math::vec3(x, y, z));
 }
 
-D3DXMATRIX TransformComponent::GetWorldMatrix() const
+math::TransformMatrix TransformComponent::GetWorldMatrix() const
 {
-	D3DXMATRIX scaleMat; 
-	D3DXMATRIX rotX, rotY, rotZ;
-	D3DXMATRIX transMat;
+	math::TransformMatrix localMat = GetLocalMatrix();
 
-	D3DXMatrixScaling(&scaleMat, Scale.x, Scale.y, Scale.z);
-	D3DXMatrixRotationX(&rotX, Rotation.x);
-	D3DXMatrixRotationY(&rotY, Rotation.y);
-	D3DXMatrixRotationZ(&rotZ, Rotation.z);
-	D3DXMatrixTranslation(&transMat, Position.x, Position.y, Position.z);
+	if (Parent)
+		localMat = localMat * Parent->GetWorldMatrix();
 
-	return (scaleMat * rotZ * rotY * rotX * transMat);
+	return localMat;
+}
+
+math::TransformMatrix TransformComponent::GetLocalMatrix() const
+{
+	math::TransformMatrix scaleMat;
+	math::TransformMatrix rotX, rotY, rotZ;
+	math::TransformMatrix transMat;
+	math::TransformMatrix localMat;
+	math::TransformMatrix pivot;
+	math::TransformMatrix undoPivot;
+
+	scaleMat.Scaling(Scale.x, Scale.y, Scale.z);
+	rotX.RotationX(Rotation.x);
+	rotY.RotationY(Rotation.y);
+	rotZ.RotationZ(Rotation.z);
+	transMat.Translation(Position.x, Position.y, Position.z);
+	undoPivot.Translation(Pivot.x, Pivot.y, Pivot.z);
+	pivot.Translation(-Pivot.x, -Pivot.y, -Pivot.z);
+
+	localMat = scaleMat * pivot * rotZ * undoPivot * transMat;
+
+	return localMat;
 }

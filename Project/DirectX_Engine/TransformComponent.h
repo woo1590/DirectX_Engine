@@ -1,12 +1,15 @@
 #pragma once
 #include "ObjectComponent.h"
+class OrbitComponent;
 class TransformComponent :
     public ObjectComponent
 {
 private:
-    D3DXVECTOR3 Position;
-    D3DXVECTOR3 Scale;
-    D3DXVECTOR3 Rotation;
+    math::vec3 Position;
+    math::vec3 Scale;
+    math::vec3 Rotation;
+
+    math::vec3 Pivot = { 0.f,0.f,0.f };
 
     TransformComponent* Parent = nullptr;
 public:
@@ -16,22 +19,26 @@ public:
     void SetParent(Object* parent);
     void SetParent(TransformComponent* parent) { Parent = parent; }
 
-    void SetPosition(float x, float y, float z) { Position = D3DXVECTOR3(x, y, z); }
-    void SetPosition(D3DXVECTOR3 pos) { Position = pos; }
+    void SetPosition(float x, float y, float z) { Position = math::vec3(x, y, z); }
+    void SetPosition(math::vec3 pos) { Position = pos; }
 
-    void SetScale(float cx, float cy, float cz) { Scale = D3DXVECTOR3(cx, cy, cz); }
-    void SetScale(D3DXVECTOR3 scale) { Scale = scale; }
+    void SetScale(float cx, float cy, float cz) { Scale = math::vec3(cx, cy, cz); }
+    void SetScale(math::vec3 scale) { Scale = scale; }
 
-    void SetRotate(D3DXVECTOR3 rotation);
+    void SetRotate(math::vec3 rotation);
     void SetRotate(float pitch, float yaw, float roll);
 
-    void Translate(D3DXVECTOR3 trans);
+    void SetPivot(math::vec3 pivot) { Pivot = pivot; }
+    void SetPivot(float x, float y, float z) { SetPivot(math::vec3(x, y, z)); }
+
+    void Translate(math::vec3 trans);
     void Translate(float x, float y, float z);
 
-    D3DXVECTOR3 GetPosition()const { return Position; }
-    D3DXVECTOR3 GetScale()const { return Scale; }
-    D3DXVECTOR3 GetRotate()const { return Rotation; }
+    math::vec3 GetPosition()const { return Position; }
+    math::vec3 GetScale()const { return Scale; }
+    math::vec3 GetRotate()const { return Rotation; }
 
-    D3DXMATRIX GetWorldMatrix()const;
+    math::TransformMatrix GetWorldMatrix()const;
+    math::TransformMatrix GetLocalMatrix()const;
 };
 

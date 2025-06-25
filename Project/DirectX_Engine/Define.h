@@ -4,6 +4,7 @@ enum class ObjectType
 {
 	Player,
 	Enemy,
+	Bullet,
 	Count
 };
 

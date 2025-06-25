@@ -58,6 +58,15 @@
     <Filter Include="08. Miscellaneous\Math">
       <UniqueIdentifier>{e6286397-ac8a-4971-899c-645beaf5b036}</UniqueIdentifier>
     </Filter>
+    <Filter Include="04. Object\Gun">
+      <UniqueIdentifier>{de1c7f76-efb5-4e2a-ae84-6c2fe3b4718f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Object Component\Orbit">
+      <UniqueIdentifier>{f38b0ae1-d84d-4663-90e2-4d52781c30a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Object\Bullet">
+      <UniqueIdentifier>{e1789a93-0882-414f-83ef-0fd8403e0c01}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine.h">
@@ -105,8 +114,14 @@
     <ClInclude Include="Math.h">
       <Filter>08. Miscellaneous\Math</Filter>
     </ClInclude>
-    <ClInclude Include="vec3.h">
-      <Filter>08. Miscellaneous\Math</Filter>
+    <ClInclude Include="Gun.h">
+      <Filter>04. Object\Gun</Filter>
+    </ClInclude>
+    <ClInclude Include="OrbitComponent.h">
+      <Filter>05. Object Component\Orbit</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>04. Object\Bullet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +160,15 @@
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>04. Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Gun.cpp">
+      <Filter>04. Object\Gun</Filter>
+    </ClCompile>
+    <ClCompile Include="OrbitComponent.cpp">
+      <Filter>05. Object Component\Orbit</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>04. Object\Bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

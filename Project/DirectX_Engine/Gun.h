@@ -1,13 +1,14 @@
 #pragma once
 #include "Object.h"
-class Player :
+class Gun :
     public Object
 {
 private:
     math::vec3 LocalPoint[4];
+    float angle;
 public:
-    Player(ObjectManager* owner, ObjectType objType);
-    ~Player() { Release(); }
+    Gun(ObjectManager* owner, ObjectType objType);
+    ~Gun(){}
 
     void Update(double dt)override;
     void Late_Update(double dt)override;
